@@ -1,10 +1,15 @@
 Your program is going to start with getting an input from the user regarding the name of the .txt file that contains credit card information. After getting the name of the file, the program must check whether the file has opened correctly. If not, another file name will be required from the user until a correct file name is entered.
+
 After successfully opening the file, your program is going to start storing credit card information by reading the file line by line. Each line of the file contains three pieces of information regarding a credit card. The first entry of the line is the 16-digit credit card number. And the second one is the month of the expiration date (to be read as positive integer and between and including 1 and 12). The last one is the year (to be read as an integer; any integer could be used as a year value) of the expiration date for this credit card. You can assume the file contains correct inputs, so no input checks are required for the content of the .txt file. Moreover, also assume that the credit card numbers are unique and you do not need to make a check for uniqueness.
+
 In the data structure, all the credit cards with the same expiration year and month must be stored in the same node. That is why we use a vector for cards there. Thus, do not create a new node for a credit card if there already exists a node with that card's expiration year and month; instead push it to the cards vector of that node. However, if there is not a node with new credit card's expiration year and month, then create a node and push the credit card number as the first entry of that node's cards vector. This mechanism guarantees that (i) there will not be a node with an empty cards vector, and (ii) there will not be two nodes with the same expiration year and month in the data structure. This is going to be checked in grading, so follow these rules strictly. After processing each line of the input file and adding the card information to the linked list, you have display output regarding the steps taken (new node created or added to an existing node); please see the sample rums for these messages.
+
 Moreover, your program should maintain the linked list in a sorted fashion with respect to expiration dates (earliest to latest). That means, the head of the list must point to the node with the earliest year and month combination of the list, and the last node's year and month combination must be the latest one. While inserting a new node, you have to preserve the order of the list all the time. This is also going to be checked in grading.
 After storing the data read from .txt file into your linked list, your program should display a menu with four different options as given below.
+
 1. Display List
 2. Card Search
 3. Delete Cards (with respect to Expiration Date)
 4. Exit
+
 According to the option value (1, 2, 3, or 4) that the user selects, the system performs the associated operation. Your program reads the option from the standard input (keyboard). If a wrong option is selected, an error message must be displayed and new option must be read.
